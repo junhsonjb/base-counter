@@ -18,7 +18,7 @@ void reverse(int *number) {
 
 	int a = strlen(snum) - 1;
 	char new[strlen(snum)];
-	for (int i = 0; i < strlen(snum) - 1; i++) {
+	for (int i = 0; i < strlen(snum); i++) {
 
 		new[i] = snum[a];
 		a--;
@@ -46,7 +46,7 @@ void fromBinary(int first, int second) {
 
 int main() {
 
-	int num = 1100;
+	int num = 11001;
 
 	printf("%d\n", num);	
 	reverse(&num);
