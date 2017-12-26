@@ -1,23 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-/* this function will take two binary
-ints and add them in binary */
+/* This function will take in an int
+   and reverse it. This way it can
+   be easier to read X^n values,
+   where X is the base we want and n
+   the current power which increases
+   by one with each iteration  */
 
-void reverse(char string[]) {
+void reverse(int *number) {
 
-	char newString[strlen(string)];
-	int a = strlen(string) - 1;
-	for (int i = 0; i < strlen(string); i++) {
+	int num = *number;
+	//find a way to reverse this number bruh
 
-		newString[i] = string[a];
+	char snum[20];
+	sprintf(snum, "%d", num);	
+
+	int a = strlen(snum) - 1;
+	char new[strlen(snum)];
+	for (int i = 0; i < strlen(snum) - 1; i++) {
+
+		new[i] = snum[a];
 		a--;
+
 	}
 
-	//I want to save the result of this method
-	//in a pointer here, gotta figure out how
-	//to do that
-	string = newString;
+	int result = atoi(snum);
+	//now store the result number into the original pointer
+	*number = result;
 
 }
 
@@ -28,17 +39,20 @@ void fromBinary(int first, int second) {
 	//2^n where n is zero at first and increments 
 	//with the next number in the string
 
-	char ex[] = "hello";
-	reverse(ex);
-	printf("%s", ex);
+	//char ex[] = "hello";
+	//reverse(ex);
+	//printf("%s", ex);
 
 }
 
 int main() {
 
-	char ex[] = "hello\n";
-	reverse(ex);
-	printf("%s", ex);
+	int num = 100;
+
+	printf("%d\n", num);	
+	reverse(&num);
+	printf("%d\n", num);
+
 
 	return 0;
 }
