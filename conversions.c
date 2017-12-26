@@ -12,9 +12,8 @@
 void reverse(int *number) {
 
 	int num = *number;
-	//find a way to reverse this number bruh
 
-	char snum[20];
+	char snum[20]; //this will be the same "value" as num just as a string
 	sprintf(snum, "%d", num);	
 
 	int a = strlen(snum) - 1;
@@ -26,7 +25,7 @@ void reverse(int *number) {
 
 	}
 
-	int result = atoi(snum);
+	int result = atoi(new);//set the result var from a string back to int
 	//now store the result number into the original pointer
 	*number = result;
 
@@ -47,7 +46,7 @@ void fromBinary(int first, int second) {
 
 int main() {
 
-	int num = 100;
+	int num = 1100;
 
 	printf("%d\n", num);	
 	reverse(&num);
