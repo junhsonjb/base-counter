@@ -18,6 +18,13 @@ void reverse(int* number) {
 
 	int num = * number;
 
+	/* sprintf() acts up when the number starts with
+	   a 0, and probably does too if it ends with a 0
+	   (I haven't checked). You're gonna have to convert
+	   the number to a string some other way, or find
+	   another way to do this function.
+	*/
+
 	char snum[20]; //this will be the same "value" as num just as a string
 	sprintf(snum, "%d", num);	
 
@@ -56,7 +63,6 @@ int main() {
 	printf("%d\n", num);	
 	reverse(&num);
 	printf("%d\n", num);
-
 
 	return 0;
 }
