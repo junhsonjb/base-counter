@@ -9,9 +9,14 @@
    the current power which increases
    by one with each iteration  */
 
-void reverse(int *number) {
+void reverse(int* number) {
 
-	int num = *number;
+	/* There's an issue with the sprintf()
+	   function when you start with 0's
+	   (and probably end with them too).
+	   You're gonna have to convert ints yourself */
+
+	int num = * number;
 
 	char snum[20]; //this will be the same "value" as num just as a string
 	sprintf(snum, "%d", num);	
@@ -46,7 +51,7 @@ void fromBinary(int first, int second) {
 
 int main() {
 
-	int num = 11001;
+	int num = 12;
 
 	printf("%d\n", num);	
 	reverse(&num);
